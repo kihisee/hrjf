@@ -354,7 +354,7 @@ mounted : function() {
 .listdetail ul li .grayleft{margin:rem(10) 0 rem(10) rem(10) ;float:left;border-radius:rem(5);width:25%;height:rem(70);background:none;}
 .listdetail ul li .grayleftright{margin:rem(10) 0;width:71%;float:right;line-height:rem(25);height:rem(70)}
 .listdetail ul li .grayleftright .topbold{color:#333333;font-size:rem(16);padding-top:rem(0);margin-top:rem(-3)}
-.listdetail ul li .grayleftright .botlight{color:#999;font-size:rem(14);line-height:rem(20);height:rem(20);white-space: nowrap;text-overflow: ellipsis;}
+.listdetail ul li .grayleftright .botlight{color:#999;font-size:rem(14);line-height:rem(20);height:rem(20);white-space: nowrap;text-overflow: ellipsis;overflow:hidden;}
 .listdetail ul li .grayleftright dl{height:rem(25);line-height:rem(25);text-align:center;overflow:hidden;}
 .listdetail ul li .grayleftright dl dt{width:auto;float:left;border-radius:rem(3);background:#dcf7ff;color:#19b9e7;padding:rem(0) rem(5);}
 .listdetail ul li .grayleftright dl dd{width:auto;padding:rem(0) rem(5);float:left;margin:0 rem(5);border-radius:rem(3);}

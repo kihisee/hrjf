@@ -5,11 +5,11 @@ import store from '../store/index'
 import router from '../router'
 const configaxios={
 
-   //baseUrl:'http://hrjfapit.cpb168.com', //测试地址
+   baseUrl:'http://hrjfapit.cpb168.com', //测试地址
    //baseUrl:'http://10.1.1.28:5223', //本机测试地址
    //baseUrl:'http://18385zy717.imwork.net', //微信地址
    //baseUrl:'https://hrjfapi.cpb168.com', //正式地址
-   baseUrl:'http://hrjfapipre.cpb168.com', //预发布地址
+   //baseUrl:'http://hrjfapipre.cpb168.com', //预发布地址
 
     headers: {'Content-Type': 'application/json ; charset=utf-8'},
     method:"post",

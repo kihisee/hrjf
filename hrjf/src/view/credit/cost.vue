@@ -101,7 +101,7 @@ import loadapp from '../../components/loadapp';
 export default {
   data () {
     return {
-      title: '特权详情',
+      title: '费用详情',
       GetCreditcard:[],
       isapp:false,
     }

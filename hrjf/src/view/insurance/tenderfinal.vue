@@ -60,6 +60,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .content{width:90%;margin: rem(15) auto;font-size:rem(16);color:#666;height:100%;}
+.container{overflow:auto;}
 .content .imgbanner{width:30%;margin:rem(140) auto rem(30);}
 .botfinsh{line-height: rem(40);width:60%;background:#de3132;color:#fff;font-size:rem(16);text-align:center;margin:0 auto;border-radius:rem(5)}
 .grayp{line-height:rem(40);text-align:center;color:#000;font-size:rem(20);margin:rem(10) 0 rem(30);font-weight: normal;}

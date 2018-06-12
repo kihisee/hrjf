@@ -29,7 +29,7 @@
           </div>
     </div>
 
-    <div class="whitebox">
+    <div class="whitebox" v-if="Privilege.length">
         <div class="toplist">
           <span class="hualeft"></span>
           <p class="midlleword">专享特权</p>
@@ -305,28 +305,21 @@ export default {
         let _this = this
         let query = this.$route.query
          var url = window.location.href;
-         console.log(_this.$store.state.user)
         if(_this.$store.state.user  != undefined){
-              console.log(2222)
             _this.$http(_this.$api.QueryInviteRewadIndex({}))
               .then(function(data){
                 _this.basset=data.data.ResultData
-                console.log( _this.basset.inviteToken)
                 url=url+"&i="+_this.basset.inviteToken
-                 console.log(url)
                 var arrUrl = url.split("//");
 　　　　var start = arrUrl[1].indexOf("/");
 　　　　var relUrl = arrUrl[1].substring(start);
-                console.log("ddd")
                 _this.$share({"href":relUrl},false)
                  _this.$share({"title":"邀约您办理申请"+_this.GetCreditcard.CardName+"，享受优质信用生活","href":relUrl,"desc":"一信一意快卡，一心一意办卡，玩转信用卡，躺着赚佣金","img":"insurance/sharepic.png"},false)
              });
           }else{
-            console.log(333)
             var arrUrl = url.split("//");
 　　　　var start = arrUrl[1].indexOf("/");
 　　　　var relUrl = arrUrl[1].substring(start);
-                console.log("eee")
              _this.$share({"title":"邀约您办理申请"+_this.GetCreditcard.CardName+" ，享受优质信用生活","href":relUrl,"desc":"一信一意快卡，一心一意办卡，玩转信用卡，躺着赚佣金","img":"insurance/sharepic.png"},false)
           }
       },
@@ -347,11 +340,9 @@ export default {
       }else{
         _this.isapp=true
       }
-    console.log(_this.isapp)
     if(query.i=="undefined" || !query.i){
        _this.$http(_this.$api.GetCreditcard({"CardId": parseFloat(query.Id)}))
       .then((data) => {
-        console.log(data)
         _this.GetCreditcard=data.data.ResultData.card
         _this.bannerList.push(data.data.ResultData.card.CardImg)
         let ss=new Array();
@@ -359,12 +350,10 @@ export default {
        _this.Privilege=ss
         this.getInviteCode();
       })
-      console.log(111)
     }else{
         console.log(query)
         _this.$http(_this.$api.GetCreditcard({"CardId":parseFloat(query.Id),"IUserId":parseFloat(query.i)}))
           .then((data) => {
-            console.log(data)
             _this.GetCreditcard=data.data.ResultData.card
             _this.bannerList.push(data.data.ResultData.card.CardImg)
             let ss=new Array();
@@ -373,8 +362,6 @@ export default {
            this.getInviteCode();
           })
 
-
-       console.log(222)
     }
 
 
@@ -475,7 +462,7 @@ export default {
 .whitebox{background:#fff;overflow:auto;margin:0 0 rem(10);padding:rem(10) 0;}
 
 .whitebox .topbold{font-weight:bold;font-size:rem(18);line-height:rem(30);color:#333;text-indent:rem(15)}
-.whitebox .middlelight{color:#666666;font-size:rem(16);text-indent:rem(15)}
+.whitebox .middlelight{color:#666666;font-size:rem(16);text-indent:rem(0);width:93%;margin:0 auto;}
 .whitebox .floatspan{margin: rem(5) 0;overflow:auto;}
 .whitebox .floatspan span{display:block;float:left;width:auto;text-align:center;border:rem(1) solid #de3031;color:#de3031;text-indent:rem(0);padding:0 rem(3);border-radius:rem(3);margin:0 rem(5)}
 .whitebox .floatspan span:first-child{margin-left:rem(15)}
